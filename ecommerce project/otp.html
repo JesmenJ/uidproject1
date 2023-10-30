@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="my-styles.css"> <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <script src="captcha.js"></script>
+</head>
+<body onload="generate()">
+    <div class="container">
+        <h1>OTP and Captcha</h1>
+        <div id="otp-container">
+            <p id="otp-status"></p>
+            <label for="otp">OTP</label>
+            <input type="text" id="otp" readonly>
+            <button onclick="generateOTP()">Generate OTP</button>
+            <label for="otp-input">Enter OTP</label>
+            <input type="text" id="otp-input" placeholder="Enter OTP">
+            <button onclick="verifyOTP()">Verify OTP</button>
+        </div>
+        <div id="user-input" class="inline">
+            <label for="submit">Captcha code</label>
+            <input type="text" id="submit" />
+        </div>
+        <div class="inline" onclick="generate()">
+            <i class="fas fa-sync"></i>
+        </div>
+        <div id="image-container">
+            <div id="image" class="inline" selectable="False"></div>
+        </div>
+        <button id="btn" onclick="printmsg()">Submit</button>
+        <p id="key"></p>
+    </div>
+</body>
+</html>
